@@ -22,8 +22,6 @@ var ReactRouterBootstrap = require('react-router-bootstrap')
 
 var path = require('path');
 
-var PDF = require('./react-pdf');
-
 function findDeck(decks, file) {
   for (var i=0; i<decks.length; i++) {
     if (decks[i].file === file) {
@@ -70,7 +68,6 @@ var DeckList = React.createClass({
 var DeckViewer = React.createClass({
   getInitialState: function() {
     this.max_page = 1;
-
     return {
       decks: [],
       page: 1
@@ -78,26 +75,28 @@ var DeckViewer = React.createClass({
   },
 
   componentDidMount: function() {
+    var root = $(this.getDOMNode());
+    var fixMarginBottom = 40;
+    var h = $(document).innerHeight() -
+            root.find('.panel-heading').offset().top -
+            root.find('.panel-heading').outerHeight() -
+            fixMarginBottom;
+    $(root).find('iframe').css({ height: h });
     var self = this;
     $.get('decks.json', function(data) {
       self.setState({ decks: data });
     });
   },
 
-  onPDFLoad: function(pdf) {
-    this.max_page = pdf.numPages;
+  pdf: function() {
+    var pdf = 'decks/' + this.props.params.file + '.pdf';
+    window.open(pdf);
   },
 
-  goNext: function() {
-    var nextpage = this.state.page + 1;
-    if (nextpage > this.max_page) { nextpage = this.max_page; }
-    this.setState({ page: nextpage });
-  },
-
-  goPrev: function() {
-    var prevpage = this.state.page - 1;
-    if (prevpage < 1) { prevpage = 1; }
-    this.setState({ page: prevpage });
+  fullScreen: function() {
+    var html = 'decks/' + this.props.params.file +
+               '/' + this.props.params.file + '.html';
+    window.open(html);
   },
 
   render: function() {
@@ -108,18 +107,19 @@ var DeckViewer = React.createClass({
         {deck.title}
         <span className='pull-right'>
           <ButtonGroup style={{ marginTop: '-4px' }}>
-            <Button bsSize='small' onClick={this.goPrev}>Prev</Button>
-            <Button bsSize='small' onClick={this.goNext}>Next</Button>
+            <Button bsSize='small' onClick={this.pdf}>PDF</Button>
+            <Button bsSize='small' onClick={this.fullScreen}>Full Screen</Button>
           </ButtonGroup>
         </span>
       </span>
     );
+    var html = 'decks/' + this.props.params.file +
+               '/' + this.props.params.file + '.html';
     return (
       <div className='container'>
-        <Panel header={header}>
-          <PDF file={'decks/' + filename} page={this.state.page}
-               onLoad={this.onPDFLoad} onClick={this.goNext}/>
-        </Panel>
+      <Panel className='full-panel' header={header}>
+        <iframe src={html}></iframe>
+      </Panel>
       </div>
     );
   }
