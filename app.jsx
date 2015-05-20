@@ -52,7 +52,7 @@ var DeckList = React.createClass({
     this.state.decks.forEach(function(deck) {
       thumbnails.push(
         <Col key={deck.file} xs={6} md={4}>
-          <Thumbnail src={'/decks/' + deck.file + '.pdf.png'} alt='242x200'>
+          <Thumbnail src={'decks/' + deck.file + '.pdf.png'} alt='242x200'>
             <h3>{deck.title}</h3>
             <p>{deck.desc}</p>
             <p><ButtonLink bsStyle='primary' to='deckviewer'
@@ -137,7 +137,7 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route handler={App} path='/'>
+  <Route handler={App}>
     <Route name='deckviewer' path='viewer/:file' handler={DeckViewer} />
     <DefaultRoute name="decklist" handler={DeckList}/>
   </Route>
