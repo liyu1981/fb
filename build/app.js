@@ -30319,6 +30319,7 @@ var DeckList = React.createClass({displayName: "DeckList",
   render: function() {
     var thumbnails = [];
     this.state.decks.forEach(function(deck) {
+      if (deck.skip) { return; }
       thumbnails.push(
         React.createElement(Col, {key: deck.file, xs: 6, md: 4}, 
           React.createElement(Thumbnail, {src: 'decks/' + deck.file + '.pdf.png', alt: "242x200"}, 

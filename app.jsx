@@ -56,6 +56,7 @@ var DeckList = React.createClass({
   render: function() {
     var thumbnails = [];
     this.state.decks.forEach(function(deck) {
+      if (deck.skip) { return; }
       thumbnails.push(
         <Col key={deck.file} xs={6} md={4}>
           <Thumbnail src={'decks/' + deck.file + '.pdf.png'} alt='242x200'>

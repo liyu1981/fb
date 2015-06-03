@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd decks
 
 rm -rf *.png

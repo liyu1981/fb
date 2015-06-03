@@ -1,3 +1,8 @@
+#!/bin/sh
+
+# usage:
+#   gen_deck_html.sh <file_name>
+
 TARGET=$1
 PDF=${1}.pdf
 
