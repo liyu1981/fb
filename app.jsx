@@ -22,6 +22,13 @@ var ReactRouterBootstrap = require('react-router-bootstrap')
 
 var path = require('path');
 
+function fbconv(data) {
+  console.log('going to fire fbq with:', data);
+  window._fbq = window._fbq || [];
+  var d = $.extend({'value':'0.00','currency':'HKD'}, data);
+  window._fbq.push(['track', '6026067140696', d]);
+}
+
 function findDeck(decks, file) {
   for (var i=0; i<decks.length; i++) {
     if (decks[i].file === file) {
@@ -43,6 +50,7 @@ var DeckList = React.createClass({
     $.get('decks.json', function(data) {
       self.setState({ decks: data });
     });
+    fbconv({ route: 'DeckList' });
   },
 
   render: function() {
@@ -86,16 +94,19 @@ var DeckViewer = React.createClass({
     $.get('decks.json', function(data) {
       self.setState({ decks: data });
     });
+    fbconv({ route: 'Deck: ' + this.props.params.file });
   },
 
   pdf: function() {
     var pdf = 'decks/' + this.props.params.file + '.pdf';
+    fbconv({ route: 'Pdf: ' + this.props.params.file });
     window.open(pdf);
   },
 
   fullScreen: function() {
     var html = 'decks/' + this.props.params.file +
                '/' + this.props.params.file + '.html';
+    fbconv({ route: 'Fullscreen: ' + this.props.params.file });
     window.open(html);
   },
 
