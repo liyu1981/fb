@@ -6,7 +6,7 @@ BASENAME=${FILENAME%.*}
 overwrite=no
 
 echo "** copy file ${PDF} to decks"
-if [ -f decks/$PDF ]; then
+if [ -f decks/$FILENAME ]; then
   echo "overwrite=yes"
   overwrite=yes
 fi
