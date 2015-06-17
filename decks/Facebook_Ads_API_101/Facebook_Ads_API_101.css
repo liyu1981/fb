@@ -11,7 +11,6 @@
 @font-face{font-family:ffa;src:url(fa.woff)format("woff");}.ffa{font-family:ffa;line-height:0.942000;font-style:normal;font-weight:normal;visibility:visible;}
 @font-face{font-family:ffb;src:url(fb.woff)format("woff");}.ffb{font-family:ffb;line-height:0.900879;font-style:normal;font-weight:normal;visibility:visible;}
 @font-face{font-family:ffc;src:url(fc.woff)format("woff");}.ffc{font-family:ffc;line-height:0.938477;font-style:normal;font-weight:normal;visibility:visible;}
-@font-face{font-family:ffd;src:url(fd.woff)format("woff");}.ffd{font-family:ffd;line-height:0.948730;font-style:normal;font-weight:normal;visibility:visible;}
 .m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
 .m1{transform:none;-ms-transform:none;-webkit-transform:none;}
 .v0{vertical-align:0.000000px;}
@@ -619,7 +618,6 @@
 .h2b{height:117.890625px;}
 .h21{height:123.785156px;}
 .h1b{height:135.574219px;}
-.h2e{height:139.687500px;}
 .h2a{height:141.468750px;}
 .h6{height:154.560000px;}
 .h26{height:176.835938px;}
@@ -1314,7 +1312,6 @@
 .h2b{height:157.187500pt;}
 .h21{height:165.046875pt;}
 .h1b{height:180.765625pt;}
-.h2e{height:186.250000pt;}
 .h2a{height:188.625000pt;}
 .h6{height:206.080000pt;}
 .h26{height:235.781250pt;}
