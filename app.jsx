@@ -119,8 +119,17 @@ var DeckViewer = React.createClass({
         {deck.title}
         <span className='pull-right'>
           <ButtonGroup style={{ marginTop: '-4px' }}>
-            <Button bsSize='small' onClick={this.pdf}>PDF</Button>
-            <Button bsSize='small' onClick={this.fullScreen}>Full Screen</Button>
+            <Button onClick={this.pdf}>PDF</Button>
+            <Button onClick={this.fullScreen}>Full Screen</Button>
+            <Button>
+              <div className="fb-like"
+                   data-href={window.location.href}
+                   data-layout="button"
+                   data-action="like"
+                   data-show-faces="true"
+                   data-share="true">
+              </div>
+            </Button>
           </ButtonGroup>
         </span>
       </span>
@@ -131,6 +140,13 @@ var DeckViewer = React.createClass({
       <div className='container'>
       <Panel className='full-panel' header={header}>
         <iframe src={html}></iframe>
+      </Panel>
+      <br />
+      <Panel>
+        <center><div className="fb-comments"
+             data-href={window.location.href}
+             data-numposts="5">
+        </div></center>
       </Panel>
       </div>
     );
