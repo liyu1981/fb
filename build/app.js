@@ -30383,7 +30383,6 @@ var DeckViewer = React.createClass({displayName: "DeckViewer",
         React.createElement("span", {className: "pull-right"}, 
           React.createElement(ButtonGroup, {style: { marginTop: '-4px'}}, 
             React.createElement(Button, {onClick: this.pdf}, "PDF"), 
-            React.createElement(Button, {onClick: this.fullScreen}, "Full Screen"), 
             React.createElement(Button, null, 
               React.createElement("div", {className: "fb-like", 
                    "data-href": window.location.href, 
@@ -30402,7 +30401,7 @@ var DeckViewer = React.createClass({displayName: "DeckViewer",
     return (
       React.createElement("div", {className: "container"}, 
       React.createElement(Panel, {className: "full-panel", header: header}, 
-        React.createElement("iframe", {src: html})
+        React.createElement("iframe", {id: "deckIframe", src: html})
       ), 
       React.createElement("br", null), 
       React.createElement(Panel, null, 

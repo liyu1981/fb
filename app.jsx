@@ -120,7 +120,6 @@ var DeckViewer = React.createClass({
         <span className='pull-right'>
           <ButtonGroup style={{ marginTop: '-4px' }}>
             <Button onClick={this.pdf}>PDF</Button>
-            <Button onClick={this.fullScreen}>Full Screen</Button>
             <Button>
               <div className="fb-like"
                    data-href={window.location.href}
@@ -139,7 +138,7 @@ var DeckViewer = React.createClass({
     return (
       <div className='container'>
       <Panel className='full-panel' header={header}>
-        <iframe src={html}></iframe>
+        <iframe id="deckIframe" src={html}></iframe>
       </Panel>
       <br />
       <Panel>

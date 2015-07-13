@@ -56,11 +56,15 @@ try{
 }catch(e){}
 </script>
 """
-@squeezeFrame.js
 
 #############
 # Do not modify
 """
+<script>
+window.onload = function() {
+  window.pdf2htmlEX.defaultViewer.fit_width();
+};
+</script>
 <title></title>
 </head>
 <body>
