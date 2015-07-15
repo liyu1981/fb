@@ -22,8 +22,10 @@ var ReactRouterBootstrap = require('react-router-bootstrap')
 
 var path = require('path');
 
+var cookie = require('js-cookie');
+
 function fbconv(data) {
-  console.log('going to fire fbq with:', data);
+  console.info('going to fire fbq with:', data);
   window._fbq = window._fbq || [];
   var d = $.extend({'value':'0.00','currency':'HKD'}, data);
   window._fbq.push(['track', '6026067140696', d]);
@@ -39,26 +41,34 @@ function findDeck(decks, file) {
 }
 
 var DeckList = React.createClass({
-  getInitialState: function() {
-    return {
-      decks: []
-    }
-  },
-
   componentDidMount: function() {
-    var self = this;
-    $.get('decks.json', function(data) {
-      self.setState({ decks: data });
-    });
     fbconv({ route: 'DeckList' });
   },
 
+  updatedMark: function(deck) {
+    var vs = this.props.appdata.deckViewStatus;;
+    var lastseen = vs[deck.file] && vs[deck.file]['lastseen'];
+    if (!lastseen ||
+        parseInt(deck.updated) > parseInt(lastseen)) {
+      return (
+        <div className="ribbon">
+          <div className="ribbon-stitches-top"></div>
+          <strong className="ribbon-content"><h1>Updated</h1></strong>
+          <div className="ribbon-stitches-bottom"></div>
+        </div>
+      );
+    }
+    return '';
+  },
+
   render: function() {
+    var self = this;
     var thumbnails = [];
-    this.state.decks.forEach(function(deck) {
+    this.props.appdata.decks.forEach(function(deck) {
       if (deck.skip) { return; }
       thumbnails.push(
         <Col key={deck.file} xs={6} md={4}>
+          {self.updatedMark(deck)}
           <Thumbnail src={'decks/' + deck.file + '.pdf.png'} alt='242x200'>
             <h3>{deck.title}</h3>
             <p>{deck.desc}</p>
@@ -75,26 +85,15 @@ var DeckList = React.createClass({
 });
 
 var DeckViewer = React.createClass({
-  getInitialState: function() {
-    this.max_page = 1;
-    return {
-      decks: [],
-      page: 1
-    }
-  },
-
   componentDidMount: function() {
     var root = $(this.getDOMNode());
     var fixMarginBottom = 40;
     var h = $(document).innerHeight() -
-            root.find('.panel-heading').offset().top -
-            root.find('.panel-heading').outerHeight() -
-            fixMarginBottom;
+      root.find('.panel-heading').offset().top -
+      root.find('.panel-heading').outerHeight() -
+      fixMarginBottom;
     $(root).find('iframe').css({ height: h });
-    var self = this;
-    $.get('decks.json', function(data) {
-      self.setState({ decks: data });
-    });
+
     fbconv({ route: 'Deck: ' + this.props.params.file });
   },
 
@@ -113,7 +112,12 @@ var DeckViewer = React.createClass({
 
   render: function() {
     var filename = this.props.params.file + '.pdf';
-    var deck = findDeck(this.state.decks, this.props.params.file) || {};
+    var deck = findDeck(this.props.appdata.decks, this.props.params.file) || {};
+
+    var vs = this.props.appdata.deckViewStatus || {};
+    vs[this.props.params.file] = { 'lastseen': deck.updated };
+    cookie.set('deckViewStatus', vs);
+
     var header = (
       <span>
         {deck.title}
@@ -153,11 +157,28 @@ var DeckViewer = React.createClass({
 });
 
 var App = React.createClass({
+  getInitialState: function() {
+    return {
+      decks: [],
+      deckViewStatus: {}
+    }
+  },
+
+  componentDidMount: function() {
+    var self = this;
+    $.get('decks.json', function(data) {
+      self.setState({ decks: data });
+    });
+    var vs = cookie.get('deckViewStatus') || "{}";
+    this.setState({ deckViewStatus: JSON.parse(vs) });
+  },
+
   render: function() {
+    var appdata = { 'appdata': this.state };
     return (
       <div>
         <br/>
-        <RouteHandler/>
+        <RouteHandler {...appdata}/>
       </div>
     );
   }

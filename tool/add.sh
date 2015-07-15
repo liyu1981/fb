@@ -23,11 +23,23 @@ echo "** generate html for ${BASENAME}"
 
 echo "** update decks.json"
 echo $overwrite
+tmpfile=/tmp/decks.$(date +%s).json
 if [[ $overwrite == "yes" ]]; then
-  echo "overwrite, skip."
+  echo "overwrite, update timestamp only."
+  json="{
+\"action_update\": 1,
+\"payload\": { \"file\": \"${BASENAME}\", \"updated\": \"$(date +%s)\" }
+}"
+  echo $json | node tool/update_decks_json.js >$tmpfile
+  cp -v decks.json decks.json.bak
+  cp -v $tmpfile decks.json
 else
-  json="{ \"file\": \"${BASENAME}\", \"title\": \"\", \"desc\": \"\" }"
-  tmpfile=/tmp/decks.$(date +%s).json
+  json="{
+\"file\": \"${BASENAME}\",
+\"title\": \"\",
+\"desc\": \"\",
+\"updated\": \"$(date +%s)\"
+}"
   echo $json | node tool/update_decks_json.js >$tmpfile
   cp -v decks.json decks.json.bak
   cp -v $tmpfile decks.json

@@ -2,16 +2,19 @@
   {
     "file": "DPA_External_CN",
     "title": "DPA 101",
-    "desc": "动态产品广告（DPA）101"
+    "desc": "动态产品广告（DPA）101",
+    "updated": "1437051022"
   },
   {
     "file": "FB_Marketing_API_Intro",
     "title": "Facebook广告系统与API",
-    "desc": "Facebook广告系统与API介绍"
+    "desc": "Facebook广告系统与API介绍",
+    "updated": "1437051022"
   },
   {
     "file": "Facebook_Ads_API_101",
     "title": "Facebook广告API 101",
-    "desc": "Facebook广告API使用入门"
+    "desc": "Facebook广告API使用入门",
+    "updated": "1437051022"
   }
 ]
