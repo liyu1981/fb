@@ -95,6 +95,9 @@ var DeckViewer = React.createClass({
     $(root).find('iframe').css({ height: h });
 
     fbconv({ route: 'Deck: ' + this.props.params.file });
+
+    // trigger fb social plugin
+    window.FB && window.FB.XFBML && window.FB.XFBML.parse();
   },
 
   pdf: function() {
