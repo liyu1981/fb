@@ -30442,6 +30442,10 @@ function findDeck(decks, file) {
   return null;
 }
 
+function isMobile() {
+  return $(window).width() < 900;
+}
+
 var DeckList = React.createClass({displayName: "DeckList",
   componentDidMount: function() {
     fbconv({ route: 'DeckList' });
@@ -30469,7 +30473,7 @@ var DeckList = React.createClass({displayName: "DeckList",
     this.props.appdata.decks.forEach(function(deck) {
       if (deck.skip) { return; }
       thumbnails.push(
-        React.createElement(Col, {key: deck.file, xs: 6, md: 4}, 
+        React.createElement(Col, {key: deck.file, xs: 12, md: 4}, 
           self.updatedMark(deck), 
           React.createElement(Thumbnail, {src: 'decks/' + deck.file + '.pdf.png', alt: "242x200"}, 
             React.createElement("h3", null, deck.title), 

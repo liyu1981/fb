@@ -40,6 +40,10 @@ function findDeck(decks, file) {
   return null;
 }
 
+function isMobile() {
+  return $(window).width() < 900;
+}
+
 var DeckList = React.createClass({
   componentDidMount: function() {
     fbconv({ route: 'DeckList' });
@@ -67,7 +71,7 @@ var DeckList = React.createClass({
     this.props.appdata.decks.forEach(function(deck) {
       if (deck.skip) { return; }
       thumbnails.push(
-        <Col key={deck.file} xs={6} md={4}>
+        <Col key={deck.file} xs={12} md={4}>
           {self.updatedMark(deck)}
           <Thumbnail src={'decks/' + deck.file + '.pdf.png'} alt='242x200'>
             <h3>{deck.title}</h3>
