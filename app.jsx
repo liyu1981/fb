@@ -24,6 +24,38 @@ var path = require('path');
 
 var cookie = require('js-cookie');
 
+var LinkMixin = require('./lib/LinkMixin');
+var ALink = React.createClass({
+  mixins: [
+    LinkMixin
+  ],
+
+  render: function() {
+    return (
+      <a {...this.getLinkProps()} ref='alink'>
+        {this.props.children}
+      </a>
+    );
+  }
+});
+var ThumbnailLink = React.createClass({
+  mixins: [
+    LinkMixin
+  ],
+
+  render: function() {
+    var innerThumbStyle = {
+      padding: '0px'
+    };
+    return (
+      <Thumbnail>
+        <Thumbnail style={innerThumbStyle} {...this.getLinkProps()} {...this.props} ref='thumbnaillink' />
+        {this.props.children}
+      </Thumbnail>
+    );
+  }
+});
+
 function fbconv(data) {
   console.info('going to fire fbq with:', data);
   window._fbq = window._fbq || [];
@@ -38,10 +70,6 @@ function findDeck(decks, file) {
     }
   }
   return null;
-}
-
-function isMobile() {
-  return $(window).width() < 900;
 }
 
 var DeckList = React.createClass({
@@ -73,12 +101,11 @@ var DeckList = React.createClass({
       thumbnails.push(
         <Col key={deck.file} xs={12} md={4}>
           {self.updatedMark(deck)}
-          <Thumbnail src={'decks/' + deck.file + '.pdf.png'} alt='242x200'>
-            <h3>{deck.title}</h3>
+          <ThumbnailLink src={'decks/' + deck.file + '.pdf.png'} alt='242x200'
+                         to='deckviewer' params={deck}>
+            <h3><ALink to='deckviewer' params={deck}>{deck.title}</ALink></h3>
             <p>{deck.desc}</p>
-            <p><ButtonLink bsStyle='primary' to='deckviewer'
-                           params={deck}>View</ButtonLink></p>
-          </Thumbnail>
+          </ThumbnailLink>
         </Col>
       );
     });
