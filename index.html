@@ -58,95 +58,58 @@ pre {
   border: 0;
 }
 
-/* ribbon style start */
-.ribbon {
-  width: 182px;
+/* ribbon-wrapper */
+.ribbon-wrapper-green {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
   position: absolute;
-  text-align: center;
-  font-size: 20px!important;
-  background: #d64b4b;
-  background: -webkit-gradient(linear, left top, left bottom, from(#d64b4b), to(#ab2c2c));
-  background: -webkit-linear-gradient(top, #d64b4b, #ab2c2c);
-  background: -moz-linear-gradient(top, #d64b4b, #ab2c2c);
-  background: -ms-linear-gradient(top, #d64b4b, #ab2c2c);
-  background: -o-linear-gradient(top, #d64b4b, #ab2c2c);
-  background-image: -ms-linear-gradient(top, #d64b4b 0%, #ab2c2c 100%);
-  -webkit-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
-  -moz-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
-  box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
-  font-family: 'Helvetica Neue',Helvetica, sans-serif;
+  top: -1px;
+  right: 14px;
+}
 
-  position: absolute;
-  right: 0;
-  top: 15px;
-  transform: rotate(45deg);
+.ribbon-green {
+  font: bold 12px Sans-Serif;
+  color: #333;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
   -webkit-transform: rotate(45deg);
-  zoom: 0.4;
-  -webkit-zoom: 0.4;
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background-color: #BFDC7A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
+  color: #6a6340;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
 }
-.ribbon h1 {
-  font-size: 32px!important;
-  /* color: #801111; */
-  color: #eee;
-  text-shadow: #d65c5c 0 1px 0;
-  margin:0px;
-  padding: 15px 10px;
+
+.ribbon-green:before, .ribbon-green:after {
+  content: "";
+  border-top:   3px solid #6e8900;
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
 }
-.ribbon:before, .ribbon:after {
-  content: '';
-  position: absolute;
-  display: block;
-  bottom: -1em;
-  border: 1.5em solid #c23a3a;
-  z-index: -1;
-}
-.ribbon:before {
-  left: -2em;
-  border-right-width: 1.5em;
-  border-left-color: transparent;
-  -webkit-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-  -moz-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-  box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-}
-.ribbon:after {
-  right: -2em;
-  border-left-width: 1.5em;
-  border-right-color: transparent;
-  -webkit-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-  -moz-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-  box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-}
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-  border-color: #871616 transparent transparent transparent;
-  position: absolute;
-  display: block;
-  border-style: solid;
-  bottom: -1em;
-  content: '';
-}
-.ribbon .ribbon-content:before {
+
+.ribbon-green:before {
   left: 0;
-  border-width: 1em 0 0 1em;
 }
-.ribbon .ribbon-content:after {
+.ribbon-green:after {
   right: 0;
-  border-width: 1em 1em 0 0;
 }
-.ribbon-stitches-top {
-  margin-top:2px;
-  border-top: 1px dashed rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
-}
-.ribbon-stitches-bottom {
-  margin-bottom:2px;
-  border-top: 1px dashed rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
-}
-/* ribbon style end */
+/* ribbon */
 
 .panel, .thumbnail {
   border-radius: 2px;

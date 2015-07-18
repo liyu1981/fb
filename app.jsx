@@ -83,10 +83,8 @@ var DeckList = React.createClass({
     if (!lastseen ||
         parseInt(deck.updated) > parseInt(lastseen)) {
       return (
-        <div className="ribbon">
-          <div className="ribbon-stitches-top"></div>
-          <strong className="ribbon-content"><h1>Updated</h1></strong>
-          <div className="ribbon-stitches-bottom"></div>
+        <div className="ribbon-wrapper-green">
+          <div className="ribbon-green">UPDATED</div>
         </div>
       );
     }
