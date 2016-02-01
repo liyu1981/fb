@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Marketing API Decks</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="og:title" content="Marketing API Deck">
-  <meta name="og:description" content="Decks on how to use Facebook marketing APIs">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js"></script>
-  <style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="og:title" content="Marketing API Deck">
+<meta name="og:description" content="Decks on how to use Facebook marketing APIs">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js"></script>
+<style>
 /* responsive pre: http://codepen.io/marcopontili/pen/yEjvk */
 pre {
   word-break: break-all; /* webkit */
@@ -58,96 +57,72 @@ pre {
   border: 0;
 }
 
-/* ribbon-wrapper */
-.ribbon-wrapper-green {
-  width: 85px;
-  height: 88px;
-  overflow: hidden;
-  position: absolute;
-  top: -1px;
-  right: 14px;
-}
-
-.ribbon-green {
-  font: bold 12px Sans-Serif;
-  color: #333;
-  text-align: center;
-  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform:    rotate(45deg);
-  -ms-transform:     rotate(45deg);
-  -o-transform:      rotate(45deg);
-  position: relative;
-  padding: 7px 0;
-  left: -5px;
-  top: 15px;
-  width: 120px;
-  background-color: #BFDC7A;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
-  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
-  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
-  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
-  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
-  color: #6a6340;
-  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
-  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
-}
-
-.ribbon-green:before, .ribbon-green:after {
-  content: "";
-  border-top:   3px solid #6e8900;
-  border-left:  3px solid transparent;
-  border-right: 3px solid transparent;
-  position:absolute;
-  bottom: -3px;
-}
-
-.ribbon-green:before {
-  left: 0;
-}
-.ribbon-green:after {
-  right: 0;
-}
-/* ribbon */
-
 .panel, .thumbnail {
   border-radius: 2px;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 }
 
 body {
-  background: #e9eaed;
+/*  background: #e9eaed; */
 }
-  </style>
-  <script>(function() {
-    var _fbq = window._fbq || (window._fbq = []);
-    if (!_fbq.loaded) {
-      var fbds = document.createElement('script');
-      fbds.async = true;
-      fbds.src = '//connect.facebook.net/en_US/fbds.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(fbds, s);
-      _fbq.loaded = true;
-    }
-  })();
-  </script>
+</style>
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+})();
+</script>
+
+<title>Solution Engineer's Home: liyuhk</title>
+
+<!-- Bootstrap core CSS -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
+<script>
+window.seaworld = {
+  'se_name': 'liyuhk'
+ ,'info': {"location": "Hong Kong, APAC", "fbid": "1482890028", "expertise": "Ecomm, Marketing Automation", "name": "Yu LI", "title": "Solution Engineer"}
+ ,'data': {"Tag": {"Count": {"value": "3"}, "Name": {"value": "facebookse"}, "value": "\n  ", "Slideshow": [{"InContest": {"value": "0"}, "Title": {"value": "Facebook \u52a8\u6001\u4ea7\u54c1\u5e7f\u544a"}, "ThumbnailSmallURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-2.jpg?cb=1453959498"}, "DownloadUrl": {"value": "http://s3.amazonaws.com/ppt-download/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403.pdf?response-content-disposition=attachment&Signature=Ldsyp2fylVxUV%2FWQhi%2B6QIOgOzg%3D&Expires=1454296559&AWSAccessKeyId=AKIAJ6D6SEMXSASXHDAQ"}, "Status": {"value": "2"}, "Updated": {"value": "2016-01-28 05:38:18 UTC"}, "Description": {"value": "\u52a8\u6001\u4ea7\u54c1\u5e7f\u544a\uff1a\u4e3a\u4ec0\u4e48\uff1f\u662f\u4ec0\u4e48\uff1f\u8fd8\u6709\u600e\u6837\u90e8\u7f72\uff1f"}, "Format": {"value": "pdf"}, "SecretKey": {"value": "czqp98V5Q2M2VT"}, "Username": {"value": "liyu2000"}, "Language": {"value": "zh-cn"}, "Created": {"value": "2016-01-27 15:24:03 UTC"}, "URL": {"value": "http://www.slideshare.net/liyu2000/dpa-external-cn"}, "SlideshowEmbedUrl": {"value": "https://www.slideshare.net/slideshow/embed_code/key/czqp98V5Q2M2VT"}, "Embed": {"value": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/czqp98V5Q2M2VT\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/liyu2000/dpa-external-cn\" title=\"Facebook \u52a8\u6001\u4ea7\u54c1\u5e7f\u544a\" target=\"_blank\">Facebook \u52a8\u6001\u4ea7\u54c1\u5e7f\u544a</a> </strong> from <strong><a href=\"http://www.slideshare.net/liyu2000\" target=\"_blank\">Yu LI</a></strong> </div>\n\n"}, "ID": {"value": "57562894"}, "SlideshowType": {"value": "0"}, "ThumbnailXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-3.jpg?cb=1453959498"}, "ThumbnailSize": {"value": "[170,130]"}, "value": "\n  ", "ThumbnailXXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-4.jpg?cb=1453959498"}, "Download": {"value": "1"}, "ThumbnailURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail.jpg?cb=1453959498"}}, {"InContest": {"value": "0"}, "Title": {"value": "\u5be6\u6230Facebook Marketing API"}, "ThumbnailSmallURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-2.jpg?cb=1453959485"}, "DownloadUrl": {"value": "http://s3.amazonaws.com/ppt-download/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403.pdf?response-content-disposition=attachment&Signature=IrVvjFPw%2BmqZW8ivO4fPohJVMEk%3D&Expires=1454296559&AWSAccessKeyId=AKIAJ6D6SEMXSASXHDAQ"}, "Status": {"value": "2"}, "Updated": {"value": "2016-01-28 05:38:05 UTC"}, "Description": {"value": "Facebook\u884c\u92b7\u81ea\u52d5\u5316\u61c9\u8a72\u600e\u6a23\u958b\u59cb\uff1f\n\n\uff08from Facebook\u7db2\u7d61\u884c\u92b7\u7814\u8a0e\u6703 2015-08 \u53f0\u7063\uff09"}, "Format": {"value": "pdf"}, "SecretKey": {"value": "oLdZgiCTjscn7B"}, "Username": {"value": "liyu2000"}, "Language": {"value": "zh-tw"}, "Created": {"value": "2016-01-27 15:24:03 UTC"}, "URL": {"value": "http://www.slideshare.net/liyu2000/tw-api-talk201508"}, "SlideshowEmbedUrl": {"value": "https://www.slideshare.net/slideshow/embed_code/key/oLdZgiCTjscn7B"}, "Embed": {"value": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/oLdZgiCTjscn7B\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/liyu2000/tw-api-talk201508\" title=\"\u5be6\u6230Facebook Marketing API\" target=\"_blank\">\u5be6\u6230Facebook Marketing API</a> </strong> from <strong><a href=\"http://www.slideshare.net/liyu2000\" target=\"_blank\">Yu LI</a></strong> </div>\n\n"}, "ID": {"value": "57562895"}, "SlideshowType": {"value": "0"}, "ThumbnailXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-3.jpg?cb=1453959485"}, "ThumbnailSize": {"value": "[170,130]"}, "value": "\n  ", "ThumbnailXXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-4.jpg?cb=1453959485"}, "Download": {"value": "1"}, "ThumbnailURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail.jpg?cb=1453959485"}}, {"InContest": {"value": "0"}, "Title": {"value": "Facebook\u5e7f\u544aAPI 101"}, "ThumbnailSmallURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail-2.jpg?cb=1453959511"}, "DownloadUrl": {"value": "http://s3.amazonaws.com/ppt-download/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540.pdf?response-content-disposition=attachment&Signature=813MR3D9CvzKf687RfM7K2mFcvI%3D&Expires=1454296559&AWSAccessKeyId=AKIAJ6D6SEMXSASXHDAQ"}, "Status": {"value": "2"}, "Updated": {"value": "2016-01-28 05:38:31 UTC"}, "Description": {"value": "\u600e\u6837\u5f00\u59cb\u7528Facebook\u5e7f\u544aAPI\u6539\u5584\u60a8\u7684\u8425\u9500\u6d3b\u52a8\uff1f\u5728\u8fd9\u91cc\u6211\u4eec\u5e26\u9886\u4f60\u4ece\u5165\u95e8\u5230\u7cbe\u901a"}, "Format": {"value": "pdf"}, "SecretKey": {"value": "3Iyo5l00kOExa"}, "Username": {"value": "liyu2000"}, "Language": {"value": "zh-cn"}, "Created": {"value": "2016-01-27 15:15:40 UTC"}, "URL": {"value": "http://www.slideshare.net/liyu2000/facebook-ads-api101"}, "SlideshowEmbedUrl": {"value": "https://www.slideshare.net/slideshow/embed_code/key/3Iyo5l00kOExa"}, "Embed": {"value": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/3Iyo5l00kOExa\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/liyu2000/facebook-ads-api101\" title=\"Facebook\u5e7f\u544aAPI 101\" target=\"_blank\">Facebook\u5e7f\u544aAPI 101</a> </strong> from <strong><a href=\"http://www.slideshare.net/liyu2000\" target=\"_blank\">Yu LI</a></strong> </div>\n\n"}, "ID": {"value": "57562471"}, "SlideshowType": {"value": "0"}, "ThumbnailXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail-3.jpg?cb=1453959511"}, "ThumbnailSize": {"value": "[170,130]"}, "value": "\n  ", "ThumbnailXXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail-4.jpg?cb=1453959511"}, "Download": {"value": "1"}, "ThumbnailURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail.jpg?cb=1453959511"}}]}}
+};
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
+<script>
+window.seaworld = {
+  'se_name': 'liyuhk'
+ ,'info': {"location": "Hong Kong, APAC", "fbid": "1482890028", "expertise": "Ecomm, Marketing Automation", "name": "Yu LI", "title": "Solution Engineer"}
+ ,'data': {"Tag": {"Count": {"value": "3"}, "Name": {"value": "facebookse"}, "value": "\n  ", "Slideshow": [{"InContest": {"value": "0"}, "Title": {"value": "Facebook \u52a8\u6001\u4ea7\u54c1\u5e7f\u544a"}, "ThumbnailSmallURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-2.jpg?cb=1453959498"}, "DownloadUrl": {"value": "http://s3.amazonaws.com/ppt-download/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403.pdf?response-content-disposition=attachment&Signature=Ldsyp2fylVxUV%2FWQhi%2B6QIOgOzg%3D&Expires=1454296559&AWSAccessKeyId=AKIAJ6D6SEMXSASXHDAQ"}, "Status": {"value": "2"}, "Updated": {"value": "2016-01-28 05:38:18 UTC"}, "Description": {"value": "\u52a8\u6001\u4ea7\u54c1\u5e7f\u544a\uff1a\u4e3a\u4ec0\u4e48\uff1f\u662f\u4ec0\u4e48\uff1f\u8fd8\u6709\u600e\u6837\u90e8\u7f72\uff1f"}, "Format": {"value": "pdf"}, "SecretKey": {"value": "czqp98V5Q2M2VT"}, "Username": {"value": "liyu2000"}, "Language": {"value": "zh-cn"}, "Created": {"value": "2016-01-27 15:24:03 UTC"}, "URL": {"value": "http://www.slideshare.net/liyu2000/dpa-external-cn"}, "SlideshowEmbedUrl": {"value": "https://www.slideshare.net/slideshow/embed_code/key/czqp98V5Q2M2VT"}, "Embed": {"value": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/czqp98V5Q2M2VT\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/liyu2000/dpa-external-cn\" title=\"Facebook \u52a8\u6001\u4ea7\u54c1\u5e7f\u544a\" target=\"_blank\">Facebook \u52a8\u6001\u4ea7\u54c1\u5e7f\u544a</a> </strong> from <strong><a href=\"http://www.slideshare.net/liyu2000\" target=\"_blank\">Yu LI</a></strong> </div>\n\n"}, "ID": {"value": "57562894"}, "SlideshowType": {"value": "0"}, "ThumbnailXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-3.jpg?cb=1453959498"}, "ThumbnailSize": {"value": "[170,130]"}, "value": "\n  ", "ThumbnailXXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-4.jpg?cb=1453959498"}, "Download": {"value": "1"}, "ThumbnailURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/4wx4qscrrk8qsgtbikua-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail.jpg?cb=1453959498"}}, {"InContest": {"value": "0"}, "Title": {"value": "\u5be6\u6230Facebook Marketing API"}, "ThumbnailSmallURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-2.jpg?cb=1453959485"}, "DownloadUrl": {"value": "http://s3.amazonaws.com/ppt-download/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403.pdf?response-content-disposition=attachment&Signature=IrVvjFPw%2BmqZW8ivO4fPohJVMEk%3D&Expires=1454296559&AWSAccessKeyId=AKIAJ6D6SEMXSASXHDAQ"}, "Status": {"value": "2"}, "Updated": {"value": "2016-01-28 05:38:05 UTC"}, "Description": {"value": "Facebook\u884c\u92b7\u81ea\u52d5\u5316\u61c9\u8a72\u600e\u6a23\u958b\u59cb\uff1f\n\n\uff08from Facebook\u7db2\u7d61\u884c\u92b7\u7814\u8a0e\u6703 2015-08 \u53f0\u7063\uff09"}, "Format": {"value": "pdf"}, "SecretKey": {"value": "oLdZgiCTjscn7B"}, "Username": {"value": "liyu2000"}, "Language": {"value": "zh-tw"}, "Created": {"value": "2016-01-27 15:24:03 UTC"}, "URL": {"value": "http://www.slideshare.net/liyu2000/tw-api-talk201508"}, "SlideshowEmbedUrl": {"value": "https://www.slideshare.net/slideshow/embed_code/key/oLdZgiCTjscn7B"}, "Embed": {"value": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/oLdZgiCTjscn7B\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/liyu2000/tw-api-talk201508\" title=\"\u5be6\u6230Facebook Marketing API\" target=\"_blank\">\u5be6\u6230Facebook Marketing API</a> </strong> from <strong><a href=\"http://www.slideshare.net/liyu2000\" target=\"_blank\">Yu LI</a></strong> </div>\n\n"}, "ID": {"value": "57562895"}, "SlideshowType": {"value": "0"}, "ThumbnailXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-3.jpg?cb=1453959485"}, "ThumbnailSize": {"value": "[170,130]"}, "value": "\n  ", "ThumbnailXXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail-4.jpg?cb=1453959485"}, "Download": {"value": "1"}, "ThumbnailURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/ivx9sbjqt4yepwz4izl4-signature-1dadf0310def88837734b746d1de585132996a6526970115b26ea192c438cfa3-poli-160127152403-thumbnail.jpg?cb=1453959485"}}, {"InContest": {"value": "0"}, "Title": {"value": "Facebook\u5e7f\u544aAPI 101"}, "ThumbnailSmallURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail-2.jpg?cb=1453959511"}, "DownloadUrl": {"value": "http://s3.amazonaws.com/ppt-download/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540.pdf?response-content-disposition=attachment&Signature=813MR3D9CvzKf687RfM7K2mFcvI%3D&Expires=1454296559&AWSAccessKeyId=AKIAJ6D6SEMXSASXHDAQ"}, "Status": {"value": "2"}, "Updated": {"value": "2016-01-28 05:38:31 UTC"}, "Description": {"value": "\u600e\u6837\u5f00\u59cb\u7528Facebook\u5e7f\u544aAPI\u6539\u5584\u60a8\u7684\u8425\u9500\u6d3b\u52a8\uff1f\u5728\u8fd9\u91cc\u6211\u4eec\u5e26\u9886\u4f60\u4ece\u5165\u95e8\u5230\u7cbe\u901a"}, "Format": {"value": "pdf"}, "SecretKey": {"value": "3Iyo5l00kOExa"}, "Username": {"value": "liyu2000"}, "Language": {"value": "zh-cn"}, "Created": {"value": "2016-01-27 15:15:40 UTC"}, "URL": {"value": "http://www.slideshare.net/liyu2000/facebook-ads-api101"}, "SlideshowEmbedUrl": {"value": "https://www.slideshare.net/slideshow/embed_code/key/3Iyo5l00kOExa"}, "Embed": {"value": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/3Iyo5l00kOExa\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/liyu2000/facebook-ads-api101\" title=\"Facebook\u5e7f\u544aAPI 101\" target=\"_blank\">Facebook\u5e7f\u544aAPI 101</a> </strong> from <strong><a href=\"http://www.slideshare.net/liyu2000\" target=\"_blank\">Yu LI</a></strong> </div>\n\n"}, "ID": {"value": "57562471"}, "SlideshowType": {"value": "0"}, "ThumbnailXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail-3.jpg?cb=1453959511"}, "ThumbnailSize": {"value": "[170,130]"}, "value": "\n  ", "ThumbnailXXLargeURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail-4.jpg?cb=1453959511"}, "Download": {"value": "1"}, "ThumbnailURL": {"value": "//cdn.slidesharecdn.com/ss_thumbnails/xzlefols3msxvejd3sjb-signature-49507911901d85a5fb01af356646388e8075f76b15b4063aeb17661aa581bbe5-poli-160127151540-thumbnail.jpg?cb=1453959511"}}]}}
+};
+</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=334467960089822";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 </head>
 <body>
+<div class="container" style="margin-top: 60px;"><div class="row"><div class="col-xs-12">
   <div id="fb-root"></div>
-  <div id="top-container"></div>
-  <script src="build/app.js"></script>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-63694179-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-
+  <div id="sehome-container"></div>
+  <script type="text/javascript" src="sehome.js"></script>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -156,6 +131,18 @@ body {
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   </script>
+</div></div></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63694179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
 </body>
 </html>
 
