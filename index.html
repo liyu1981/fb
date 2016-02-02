@@ -65,6 +65,15 @@ pre {
 body {
 /*  background: #e9eaed; */
 }
+
+@media only screen and (max-width : 768px) {
+div.container { margin-top: 0px !important; }
+div#sehome-container .close { display: none; }
+div#sehome-container .col-md-12 { padding: 0px; }
+div#sehome-container .col-md-12 iframe { height: auto !important; }
+div#sehome-container div#iframe-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ padding-top: 25px; height: 0; }
+div#sehome-container div#iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100% !important; }
+}
 </style>
 <script>(function() {
   var _fbq = window._fbq || (window._fbq = []);

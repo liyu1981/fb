@@ -55,7 +55,7 @@ var SEDeckLightbox = React.createClass({
           )
         )
       ),
-      React.createElement('div', { dangerouslySetInnerHTML: { __html: embed } }),
+      React.createElement('div', { id: 'iframe-container', dangerouslySetInnerHTML: { __html: embed } }),
       React.createElement(
         'div',
         null,
