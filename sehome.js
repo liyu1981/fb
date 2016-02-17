@@ -55,7 +55,7 @@ var SEDeckLightbox = React.createClass({
           )
         )
       ),
-      React.createElement('div', { id: 'iframe-container', dangerouslySetInnerHTML: { __html: embed } }),
+      React.createElement('div', { dangerouslySetInnerHTML: { __html: embed } }),
       React.createElement(
         'div',
         null,
@@ -83,7 +83,7 @@ var SEDeckListItem = React.createClass({
     };
     return React.createElement(
       'div',
-      { className: 'col-sm-6 col-md-4' },
+      { className: 'se-deck-list-item' },
       React.createElement(
         'div',
         { className: 'thumbnail',
@@ -195,12 +195,8 @@ var SEDeckList = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'row' },
-            React.createElement(
-              'div',
-              null,
-              deck_entries
-            )
+            { className: 'se-deck-list' },
+            deck_entries
           )
         )
       )
