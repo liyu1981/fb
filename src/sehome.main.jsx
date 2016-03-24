@@ -130,8 +130,20 @@ const SEDeckList = React.createClass({
             </p>
           </center></div>
           <div className="col-md-9">
-            <div>Avaliable Decks:</div>
+            <div><h3>Avaliable Decks:</h3></div>
             <div className="se-deck-list">{deck_entries}</div>
+          </div>
+          <div className="col-md-3"></div>
+          <div className="col-md-9">
+            <h3>More videoes? Find them at {"  "}
+            <a href="https://www.facebook.com/marketingdevelopers/videos"
+               target="_blank">Facebook Marketing Developers Group</a>
+            </h3>
+            <a href="https://www.facebook.com/marketingdevelopers/videos"
+               target="_blank">
+               <img src="images/facebook_marketingdevelopers_videolist.png"
+                    width="100%"></img>
+            </a>
           </div>
         </div>
       </div>

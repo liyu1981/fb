@@ -191,12 +191,40 @@ var SEDeckList = React.createClass({
           React.createElement(
             'div',
             null,
-            'Avaliable Decks:'
+            React.createElement(
+              'h3',
+              null,
+              'Avaliable Decks:'
+            )
           ),
           React.createElement(
             'div',
             { className: 'se-deck-list' },
             deck_entries
+          )
+        ),
+        React.createElement('div', { className: 'col-md-3' }),
+        React.createElement(
+          'div',
+          { className: 'col-md-9' },
+          React.createElement(
+            'h3',
+            null,
+            'More videoes? Find them at ',
+            "  ",
+            React.createElement(
+              'a',
+              { href: 'https://www.facebook.com/marketingdevelopers/videos',
+                target: '_blank' },
+              'Facebook Marketing Developers Group'
+            )
+          ),
+          React.createElement(
+            'a',
+            { href: 'https://www.facebook.com/marketingdevelopers/videos',
+              target: '_blank' },
+            React.createElement('img', { src: 'images/facebook_marketingdevelopers_videolist.png',
+              width: '100%' })
           )
         )
       )
